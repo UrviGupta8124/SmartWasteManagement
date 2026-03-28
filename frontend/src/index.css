@@ -1,13 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --bg-color: #0d0e15;
-  --card-bg: rgba(255, 255, 255, 0.03);
-  --card-border: rgba(255, 255, 255, 0.08);
-  --text-main: #f3f4f6;
-  --text-muted: #9ca3af;
-  --primary: #3b82f6;
-  --primary-hover: #2563eb;
+  --bg-color: #f0fdf4;
+  --card-bg: rgba(255, 255, 255, 0.65);
+  --card-border: rgba(16, 185, 129, 0.2);
+  --text-main: #064e3b;
+  --text-muted: #047857;
+  --primary: #10b981;
+  --primary-hover: #059669;
   --success: #10b981;
   --danger: #ef4444;
 }
@@ -29,11 +29,7 @@ body {
 
 .app-container {
   min-height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1rem;
-  width: 100vw;
+  width: 100%;
 }
 
 /* Auth Cards */
@@ -64,8 +60,9 @@ body {
   font-size: 1.75rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
-  background: linear-gradient(135deg, #fff 0%, #a1a1aa 100%);
+  background: linear-gradient(135deg, var(--text-main) 0%, var(--primary) 100%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -89,7 +86,7 @@ body {
 .form-control {
   width: 100%;
   padding: 0.75rem 1rem;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(255, 255, 255, 0.5);
   border: 1px solid var(--card-border);
   border-radius: 0.5rem;
   color: var(--text-main);
@@ -245,7 +242,7 @@ body {
   font-size: 2.5rem;
   font-weight: 600;
   margin-bottom: 1.5rem;
-  color: white;
+  color: var(--primary);
 }
 
 .status-badge {
@@ -310,7 +307,8 @@ body {
   flex: 1;
   height: 6px;
   -webkit-appearance: none;
-  background: rgba(255, 255, 255, 0.1);
+  appearance: none;
+  background: rgba(16, 185, 129, 0.2);
   border-radius: 999px;
   outline: none;
 }
@@ -333,7 +331,7 @@ body {
 .update-btn {
   width: 100%;
   padding: 0.875rem;
-  background: rgba(255, 255, 255, 0.05);
+  background: var(--primary);
   color: white;
   border: 1px solid var(--card-border);
   border-radius: 0.5rem;
