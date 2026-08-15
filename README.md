@@ -230,7 +230,7 @@ python server.py
 
 ## 📜 License
 
-This project is open source and available under the **ISC License**.
+This project is proprietary and not licensed for reuse or distribution without permission.
 
 ---
 
