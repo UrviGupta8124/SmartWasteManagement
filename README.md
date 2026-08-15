@@ -23,28 +23,28 @@ Combining **Edge AI**, **Microcontroller Firmware (ESP32)**, **Real-Time WebSock
 
 ```mermaid
 graph TD
-    subgraph Hardware & Edge AI Bin (FutureCan)
-        A[IR Sensor] -->|Detects Item| B[ESP32 Microcontroller]
-        B -->|Publish Capture Request| C[MQTT Broker: HiveMQ]
-        C -->|MQTT Trigger| D[Python Edge AI Server]
-        E[IP Camera / DroidCam] -->|Video Stream| D
+    subgraph HW["Hardware & Edge AI Bin (FutureCan)"]
+        A["IR Sensor"] -->|Detects Item| B["ESP32 Microcontroller"]
+        B -->|Publish Capture Request| C["MQTT Broker (HiveMQ)"]
+        C -->|MQTT Trigger| D["Python Edge AI Server"]
+        E["IP Camera / DroidCam"] -->|Video Stream| D
         D -->|TF Lite Model Inference| D
         D -->|Publish Class Result| C
         C -->|MQTT Result| B
-        B -->|Move Dual Servos| F[Sort into Bin: Organic/Recyclable/Hazardous]
+        B -->|Move Dual Servos| F["Sort into Bin: Organic / Recyclable / Hazardous"]
     end
 
-    subgraph Backend Services
-        D -->|HTTP POST Waste Log| G[Node.js / Express Server]
-        H[IoT Fleet Simulator] -->|HTTP POST Live Telemetry| G
-        G <--> I[(MongoDB Database)]
-        G <-->|Socket.io WebSockets| J[Real-time Events]
+    subgraph Backend["Backend Services"]
+        D -->|HTTP POST Waste Log| G["Node.js / Express Server"]
+        H["IoT Fleet Simulator"] -->|HTTP POST Live Telemetry| G
+        G <--> I[("MongoDB Database")]
+        G <-->|Socket.io WebSockets| J["Real-time Events"]
     end
 
-    subgraph User Interfaces
-        J <--> K[React Frontend Dashboard]
-        K -->|Municipal View| L[Fleet Map, Zone Analytics, Bin Registry, Critical Dispatch]
-        K -->|Citizen View| M[Eco-Points, Recycling Streaks, CO2 Offset]
+    subgraph UI["User Interfaces"]
+        J <--> K["React Frontend Dashboard"]
+        K -->|Municipal View| L["Fleet Map, Zone Analytics, Bin Registry, Critical Dispatch"]
+        K -->|Citizen View| M["Eco-Points, Recycling Streaks, CO2 Offset"]
     end
 ```
 
