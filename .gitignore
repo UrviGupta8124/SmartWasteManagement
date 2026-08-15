@@ -1,0 +1,21 @@
+# Dependencies
+node_modules/
+backend/node_modules/
+frontend/node_modules/
+hardware/venv/
+hardware/__pycache__/
+*.pyc
+
+# Builds & Outputs
+frontend/dist/
+frontend/build-error.log
+backend/db_output.txt
+
+# Environment variables
+.env
+backend/.env
+
+# IDE & System
+.DS_Store
+*.swp
+*.tmp
